@@ -1,0 +1,98 @@
+﻿        <section className="history-section" id="history">
+          <div className="section-heading">
+            <p className="tagline">RECOMMENDATION HISTORY</p>
+            <h2>Previous AI Recommendations</h2>
+            <p>
+              View your previous crop recommendations and field conditions.
+            </p>
+          </div>
+
+          <div className="history-container">
+            {history.length === 0 ? (
+              <div className="empty-history">
+                <h3>No recommendations yet</h3>
+                <p>Your previous recommendations will appear here.</p>
+              </div>
+            ) : (
+              history.map((item) => (
+                <div className="history-card" key={item.id}>
+                  <div className="history-header">
+                    <div>
+                      <span>Recommendation #{item.id}</span>
+                      <h3>{item.recommended_crop}</h3>
+                    </div>
+
+                    <div className="crop-badge">
+                      AI Result
+                    </div>
+                  </div>
+
+                  <div className="history-values">
+                    <div>
+                      <strong>{item.nitrogen}</strong>
+                      <span>Nitrogen</span>
+                    </div>
+
+                    <div>
+                      <strong>{item.phosphorus}</strong>
+                      <span>Phosphorus</span>
+                    </div>
+
+                    <div>
+                      <strong>{item.potassium}</strong>
+                      <span>Potassium</span>
+                    </div>
+
+                    <div>
+                      <strong>{item.temperature}</strong>
+                      <span>Temperature</span>
+                    </div>
+
+                    <div>
+                      <strong>{item.humidity}</strong>
+                      <span>Humidity</span>
+                    </div>
+
+                    <div>
+                      <strong>{item.ph_value}</strong>
+                      <span>Soil pH</span>
+                    </div>
+
+                    <div>
+                      <strong>{item.rainfall}</strong>
+                      <span>Rainfall</span>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </section>
+
+        <section className="features">
+          <div className="feature-card">
+            <span>01</span>
+            <h3>Crop Recommendation</h3>
+            <p>
+              Get AI-powered crop recommendations based on environmental
+              conditions.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <span>02</span>
+            <h3>Soil Analysis</h3>
+            <p>
+              Store and analyze important soil parameters such as N, P, K and
+              pH.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <span>03</span>
+            <h3>Recommendation History</h3>
+            <p>
+              View previous crop recommendations and input conditions.
+            </p>
+          </div>
+        </section>
