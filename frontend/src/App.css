@@ -225,10 +225,15 @@ body {
 .form-card,
 .result-card {
   background: white;
-  border-radius: 20px;
-  padding: 35px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  padding: 38px;
+  border: 1px solid #dfe9e1;
+  box-shadow: 0 12px 35px rgba(20, 83, 45, 0.06);
+  transition: 0.3s ease;
+}
+
+.form-card:hover {
+  box-shadow: 0 18px 45px rgba(20, 83, 45, 0.09);
 }
 
 .input-grid {
@@ -507,29 +512,17 @@ body {
   }
 
   .form-card,
-  .result-card {
-    padding: 25px;
-  }
+.result-card {
+  background: white;
+  border-radius: 24px;
+  padding: 38px;
+  border: 1px solid #dfe9e1;
+  box-shadow: 0 12px 35px rgba(20, 83, 45, 0.06);
+  transition: 0.3s ease;
+}
 
-  .soil-history-section,
-  .history-section,
-  .recommend-section {
-    padding: 65px 5%;
-  }
-
-  .history-values {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .history-header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .hero-card {
-    width: 100%;
-    max-width: 350px;
-  }
+.form-card:hover {
+  box-shadow: 0 18px 45px rgba(20, 83, 45, 0.09);
 }
 
 .soil-analysis-result {
@@ -1222,5 +1215,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
