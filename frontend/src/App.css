@@ -154,11 +154,13 @@ body {
 }
 
 .stat-card {
-  padding: 26px;
-  border-radius: 18px;
-  background: #f8faf8;
-  border: 1px solid #e5e7eb;
-  transition: 0.25s;
+  padding: 28px;
+  min-height: 155px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #f3f8f4);
+  border: 1px solid #dfe9e1;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 24px rgba(20, 83, 45, 0.05);
 }
 
 .stat-card:hover {
@@ -647,9 +649,13 @@ body {
 }
 
 .stat-card {
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(20, 83, 45, 0.06);
-  border-color: #dfe8e1;
+  padding: 28px;
+  min-height: 155px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #f3f8f4);
+  border: 1px solid #dfe9e1;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 24px rgba(20, 83, 45, 0.05);
 }
 
 .stat-card:hover {
@@ -1216,4 +1222,5 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
