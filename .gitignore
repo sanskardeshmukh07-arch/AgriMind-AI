@@ -9,3 +9,7 @@ __pycache__/
 node_modules/
 
 dataset/plant_disease/PlantVillage-Dataset/
+
+src/
+
+*_backup*
