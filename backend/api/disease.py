@@ -1,4 +1,4 @@
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from PIL import Image
 import io
 import os
@@ -14,6 +14,9 @@ if PROJECT_ROOT not in sys.path:
     sys.path.append(PROJECT_ROOT)
 
 from ml.disease_detection.predict_disease import predict_disease
+from ml.disease_detection.disease_knowledge import get_disease_advice
+from backend.api.auth import get_current_user
+from backend.models.user import User
 
 
 router = APIRouter(
@@ -23,7 +26,7 @@ router = APIRouter(
 
 
 @router.post("/predict")
-async def predict_plant_disease(file: UploadFile = File(...)):
+async def predict_plant_disease(file: UploadFile = File(...), current_user: User = Depends(get_current_user)):
 
     # Check file type
     allowed_types = [
@@ -68,11 +71,14 @@ async def predict_plant_disease(file: UploadFile = File(...)):
         # Delete temporary image
         os.remove(temp_path)
 
+        advice = get_disease_advice(result["disease"])
+
         return {
             "success": True,
             "filename": file.filename,
             "disease": result["disease"],
-            "confidence": result["confidence"]
+            "confidence": result["confidence"],
+            "details": advice
         }
 
     except Exception as e:

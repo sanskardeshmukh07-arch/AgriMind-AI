@@ -1,0 +1,198 @@
+.disease-det-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.drop-upload-box {
+  border: 1.5px dashed #C8D5C5;
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #FAFCF9;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.drop-upload-box.dragging {
+  border-color: var(--primary-green);
+  background-color: var(--primary-green-light);
+}
+
+.upload-icon-wrapper {
+  margin-bottom: 8px;
+}
+
+.drop-main-text {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.drop-format-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  margin-bottom: 14px;
+}
+
+.choose-file-btn {
+  height: var(--control-height);
+  border-radius: var(--radius-control);
+  background-color: #FFFFFF;
+  border: 1px solid #C8D3C4;
+  color: var(--text-main);
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.choose-file-btn:hover:not(:disabled) {
+  border-color: var(--primary-green);
+  background-color: #F8FAF7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.choose-file-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.selected-filename {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.disease-error-banner {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background-color: #FDF2F2;
+  border: 1px solid #F8B4B4;
+  border-radius: var(--radius-control);
+  color: #9B1C1C;
+  font-size: 13.5px;
+}
+
+/* Diagnosis Result Panel */
+.diagnosis-result-panel {
+  margin-top: 18px;
+  background-color: var(--panel-result-bg);
+  border: 1px solid var(--panel-result-border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  animation: fadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diagnosis-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.diagnosis-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--primary-green);
+  text-transform: uppercase;
+}
+
+.diagnosis-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+}
+
+.status-badge-chip {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 14px;
+  white-space: nowrap;
+}
+
+.status-badge-chip.diseased {
+  background-color: var(--chip-warning-bg);
+  color: var(--chip-warning-text);
+  border: 1px solid #F6D6A0;
+}
+
+.status-badge-chip.healthy {
+  background-color: #D6EDE0;
+  color: #125732;
+  border: 1px solid #B8E0C9;
+}
+
+.diagnosis-confidence-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.confidence-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.confidence-label-row strong {
+  color: var(--text-main);
+}
+
+.confidence-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: #D3E4D6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.confidence-bar-fill {
+  height: 100%;
+  background-color: var(--primary-green);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.view-treatments-link-btn {
+  margin-top: 4px;
+  background: transparent;
+  border: none;
+  color: var(--primary-green);
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.view-treatments-link-btn:hover {
+  text-decoration: underline;
+}

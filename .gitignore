@@ -1,15 +1,37 @@
+# Virtual environment & Environment Variables
 .venv/
 .env
+.env*.local
+!.env.example
+
+# Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
 *.pyd
+
+# IDEs
 .vscode/
 .idea/
+.DS_Store
+
+# Node & Frontend
 node_modules/
+dist/
+build/
+*.log
 
-dataset/plant_disease/PlantVillage-Dataset/
+# Databases
+*.sqlite
+*.sqlite3
+*.db
 
-src/
-
+# Temporary & backup files
 *_backup*
+*.old.*
+*.bak
+*.tmp
+frontend/src/history_section.txt
+
+# Large ML Datasets (models are tracked in ml/models/)
+dataset/plant_disease/PlantVillage-Dataset/

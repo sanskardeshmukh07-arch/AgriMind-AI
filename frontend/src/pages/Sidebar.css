@@ -1,0 +1,272 @@
+/* =========================================
+   AgriMind AI — Permanent Sidebar
+========================================= */
+
+.agrimind-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 285px;
+  max-width: 85vw;
+  height: 100vh;
+  padding: 22px 16px;
+  background: #10291f;
+  color: #f4fff7;
+  z-index: 1002;
+  transform: none !important;
+  visibility: visible !important;
+  transition: none;
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  overflow-y: auto;
+}
+
+.sidebar-backdrop {
+  display: none !important;
+}
+
+.menu-toggle {
+  display: none !important;
+}
+
+.current-page-label {
+  margin-left: auto;
+  margin-right: 18px;
+  font-size: 0.92rem;
+  opacity: 0.78;
+}
+
+/* Sidebar brand */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  margin-bottom: 10px;
+}
+
+.sidebar-brand-icon {
+  font-size: 2rem;
+}
+
+.sidebar-brand strong,
+.sidebar-brand small,
+.sidebar-footer strong,
+.sidebar-footer small {
+  display: block;
+}
+
+.sidebar-brand strong {
+  font-size: 1.08rem;
+}
+
+.sidebar-brand small,
+.sidebar-footer small {
+  color: #b8d4c3;
+  margin-top: 4px;
+}
+
+/* Sidebar sections */
+.sidebar-label {
+  color: #9bbba7;
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+  padding: 15px 12px 6px;
+}
+
+.agrimind-sidebar > button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px;
+  color: #eaf6ee;
+  background: transparent;
+  text-align: left;
+  font-size: 0.94rem;
+  cursor: pointer;
+}
+
+.agrimind-sidebar > button:hover,
+.agrimind-sidebar > button.active {
+  background: #286b49;
+  color: #fff;
+}
+
+.agrimind-sidebar > button span {
+  flex: 1;
+}
+
+.sidebar-footer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 15px 12px;
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+/* Show only the selected route's section */
+.page-crop .dashboard-stats,
+.page-crop .analytics-section,
+.page-crop .hero,
+.page-crop .disease-section,
+.page-crop .soil-section,
+.page-crop .soil-history-section,
+.page-crop .history-section,
+.page-crop .features {
+  display: none !important;
+}
+
+.page-disease .dashboard-stats,
+.page-disease .analytics-section,
+.page-disease .hero,
+.page-disease .recommend-section,
+.page-disease .soil-section,
+.page-disease .soil-history-section,
+.page-disease .history-section,
+.page-disease .features {
+  display: none !important;
+}
+
+.page-soil .dashboard-stats,
+.page-soil .analytics-section,
+.page-soil .hero,
+.page-soil .recommend-section,
+.page-soil .disease-section,
+.page-soil .soil-history-section,
+.page-soil .history-section,
+.page-soil .features {
+  display: none !important;
+}
+
+.page-soil-history .dashboard-stats,
+.page-soil-history .analytics-section,
+.page-soil-history .hero,
+.page-soil-history .recommend-section,
+.page-soil-history .disease-section,
+.page-soil-history .soil-section,
+.page-soil-history .history-section,
+.page-soil-history .features {
+  display: none !important;
+}
+
+.page-history .dashboard-stats,
+.page-history .analytics-section,
+.page-history .hero,
+.page-history .recommend-section,
+.page-history .disease-section,
+.page-history .soil-section,
+.page-history .soil-history-section,
+.page-history .features {
+  display: none !important;
+}
+
+.page-dashboard .recommend-section,
+.page-dashboard .disease-section,
+.page-dashboard .soil-section,
+.page-dashboard .soil-history-section,
+.page-dashboard .history-section {
+  display: none !important;
+}
+
+/* Keep application content to the right of sidebar */
+.app {
+  min-height: 100vh;
+}
+
+.app .navbar,
+.app main {
+  margin-left: 285px;
+  width: calc(100% - 285px);
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.app main {
+  min-width: 0;
+  padding: 28px;
+}
+
+/* Prevent cards and forms from becoming too narrow */
+.app .dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.app .stat-card,
+.app .form-card,
+.app .result-card,
+.app .disease-upload-card,
+.app .disease-result-card,
+.app .soil-form-card,
+.app .history-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.app .input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.app .input-group input,
+.app .input-group select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+  .agrimind-sidebar {
+    width: 235px;
+  }
+
+  .app .navbar,
+  .app main {
+    margin-left: 235px;
+    width: calc(100% - 235px);
+  }
+
+  .app main {
+    padding: 18px;
+  }
+
+  .app .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .agrimind-sidebar {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+  }
+
+  .sidebar-footer {
+    margin-top: 12px;
+  }
+
+  .app .navbar,
+  .app main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .app .input-grid {
+    grid-template-columns: 1fr;
+  }
+}

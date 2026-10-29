@@ -1,0 +1,449 @@
+.disease-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.disease-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.disease-upload-card,
+.disease-result-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.result-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.download-report-btn {
+  background-color: #FFFFFF;
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.download-report-btn:hover {
+  background-color: var(--primary-green-light);
+}
+
+.disease-dropzone {
+  border: 1.5px dashed #C8D5C5;
+  border-radius: 12px;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #FAFCF9;
+  margin-top: 16px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.disease-dropzone.dragging {
+  border-color: var(--primary-green);
+  background-color: var(--primary-green-light);
+}
+
+.image-preview-block {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preview-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.clear-preview-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.clear-preview-btn:hover {
+  color: var(--text-main);
+}
+
+.preview-img-wrapper {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.predict-action-btn {
+  height: var(--control-height);
+  border-radius: var(--radius-control);
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  transition: background-color 0.15s ease;
+}
+
+.predict-action-btn:hover:not(:disabled) {
+  background-color: var(--primary-green-hover);
+}
+
+.predict-action-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.diagnosis-placeholder {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 20px;
+  color: var(--text-muted);
+}
+
+.placeholder-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.diagnosis-full-content {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.diagnosis-result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.diagnosis-label-mini {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--primary-green);
+  text-transform: uppercase;
+}
+
+.diagnosis-crop-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.4px;
+  margin-top: 2px;
+}
+
+.disease-details-box {
+  background-color: #FAFCF9;
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.details-section strong {
+  font-size: 13.5px;
+  color: var(--text-main);
+}
+
+.details-section p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+.details-bullet-list {
+  margin-top: 6px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+/* Treatment Products Section */
+.treatment-products-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.products-section-heading {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.products-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.product-option-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-left: 4px solid var(--primary-green);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-option-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.product-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product-pill-category {
+  font-size: 11.5px;
+  font-weight: 700;
+  background-color: var(--primary-green-light);
+  color: var(--primary-green);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.product-price-tag .price-inr-val {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1F6B43;
+}
+
+.price-unavailable-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8C6200;
+  background-color: #FDF3D8;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.product-brand-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.product-pack-info {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.product-purpose-text {
+  font-size: 13.5px;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.product-guidance-box {
+  background-color: #F8FAF7;
+  border: 1px solid #E4EAE1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-main);
+}
+
+.guidance-line strong {
+  color: #1E3A28;
+}
+
+.guidance-line.precautions {
+  color: #6B4701;
+}
+
+.product-meta-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #718376;
+  margin-top: 4px;
+  border-top: 1px solid #EEF2EB;
+  padding-top: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.price-note-alert {
+  font-size: 12px;
+  color: #7A5700;
+  background-color: #FFFDF0;
+  border: 1px solid #F5E8B8;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.disease-disclaimer-card {
+  background-color: #FDF9EE;
+  border: 1px solid #F1E2BA;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12.5px;
+}
+
+.disease-disclaimer-card strong {
+  color: #634300;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.disease-disclaimer-card p {
+  color: #55441E;
+  line-height: 1.45;
+}
+
+/* Print styling */
+.print-report-header {
+  display: none;
+}
+
+@media print {
+  body {
+    background: #FFFFFF !important;
+  }
+
+  .agrimind-sidebar,
+  .agrimind-topbar,
+  .no-print {
+    display: none !important;
+  }
+
+  .agrimind-main-wrapper {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
+  .agrimind-content-area {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .print-report-header {
+    display: block !important;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #1F6B43;
+    padding-bottom: 12px;
+  }
+
+  .print-report-header h1 {
+    font-size: 22pt;
+    color: #12301F;
+    margin: 0 0 6px 0;
+  }
+
+  .print-report-header p {
+    font-size: 10pt;
+    color: #546358;
+    margin: 0;
+  }
+
+  .disease-main-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .disease-result-card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .product-option-card {
+    break-inside: avoid;
+    border: 1px solid #CCC !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .disease-main-grid {
+    grid-template-columns: 1fr;
+  }
+}

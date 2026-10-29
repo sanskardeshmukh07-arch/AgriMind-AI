@@ -1,36 +1,31 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from backend.core.database import engine
+from backend.api.auth import get_current_user, get_db
+from backend.models.user import User
 from backend.models.recommendation import Recommendation
 
-router = APIRouter(
-    prefix="/api/recommendations",
-    tags=["Recommendation History"]
-)
+router = APIRouter(prefix="/api/recommendations", tags=["Recommendation History"])
 
 
-@router.get("/{user_id}")
-def get_recommendations(user_id: int):
-    with Session(engine) as session:
-        recommendations = (
-            session.query(Recommendation)
-            .filter(Recommendation.user_id == user_id)
-            .order_by(Recommendation.id.desc())
-            .all()
-        )
-
-        return [
-            {
-                "id": recommendation.id,
-                "recommended_crop": recommendation.recommended_crop,
-                "nitrogen": recommendation.nitrogen,
-                "phosphorus": recommendation.phosphorus,
-                "potassium": recommendation.potassium,
-                "temperature": recommendation.temperature,
-                "humidity": recommendation.humidity,
-                "ph_value": recommendation.ph_value,
-                "rainfall": recommendation.rainfall,
-            }
-            for recommendation in recommendations
-        ]
+@router.get("/me")
+def get_recommendations(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    recommendations = (
+        db.query(Recommendation)
+        .filter(Recommendation.user_id == current_user.id)
+        .order_by(Recommendation.id.desc()).all()
+    )
+    return [{
+        "id": item.id,
+        "recommended_crop": item.recommended_crop,
+        "nitrogen": item.nitrogen,
+        "phosphorus": item.phosphorus,
+        "potassium": item.potassium,
+        "temperature": item.temperature,
+        "humidity": item.humidity,
+        "ph_value": item.ph_value,
+        "rainfall": item.rainfall,
+    } for item in recommendations]

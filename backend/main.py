@@ -1,4 +1,4 @@
-﻿from fastapi import FastAPI
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.crop import router as crop_router
@@ -7,6 +7,8 @@ from backend.api.recommendations import router as recommendations_router
 from backend.api.soil import router as soil_router
 from backend.api.disease import router as disease_router
 from backend.api.auth import router as auth_router
+from backend.api.weather import router as weather_router
+from backend.api.assistant import router as assistant_router
 
 app = FastAPI(
     title="AgriMind AI",
@@ -32,6 +34,8 @@ app.include_router(recommendations_router)
 app.include_router(soil_router)
 app.include_router(disease_router)
 app.include_router(auth_router)
+app.include_router(weather_router)
+app.include_router(assistant_router)
 
 
 @app.get("/")

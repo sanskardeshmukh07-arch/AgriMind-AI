@@ -1,7 +1,10 @@
+import os
 import joblib
 import pandas as pd
 
-MODEL_PATH = "ml/models/crop_recommendation_model.pkl"
+MODEL_PATH = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "ml", "models", "crop_recommendation_model.pkl")
+)
 
 model = joblib.load(MODEL_PATH)
 
